@@ -34,7 +34,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center space-x-2 px-2">
-          <Image src="/logo.png" alt="Ostad Logo" width={150} height={50} />
+          <Image src="/logo.png" alt="Ostad Logo" width={120} height={40} />
         </div>
 
         {/* Mobile Menu Button */}

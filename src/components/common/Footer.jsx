@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Branding Section */}
         <div>
           <h2 className="text-2xl font-bold flex items-center">
-		  <Image src="/logo.svg" alt="Ostad Logo" width={100} height={60} className="mr-2" />
+		  <Image src="/logo.png" alt="Ostad Logo" width={100} height={60} className="mr-2" />
           </h2>
           <p className="mt-2">Online Live Skill Development Platform</p>
           <h3 className="mt-4 font-semibold">Download Ostad App</h3>
@@ -67,7 +67,7 @@ const Footer = () => {
         <SiAmericanexpress className="h-8 w-8" />
         <SiDiscover className="h-8 w-8" />
         {/* Add other icons as needed */}
-        {/* <SiSsl className="h-8 w-8" /> */} 
+        {/* <SiSsl className="h-8 w-8" /> */}
       </div>
     </footer>
   );
