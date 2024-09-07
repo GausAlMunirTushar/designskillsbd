@@ -3,5 +3,31 @@
 @tailwind utilities;
 
 body {
-	@apply dark:bg-gray-900
+	@apply dark:bg-gray-900;
 }
+
+@keyframes marquee {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+/* Marquee animation */
+@keyframes marquee {
+	0%   { transform: translateX(100%); }
+	100% { transform: translateX(-100%); }
+  }
+
+  /* Add hover state to pause the animation */
+  .animate-marquee {
+	display: inline-block;
+	animation: marquee 25s linear infinite;
+	white-space: nowrap;
+	animation-play-state: running;
+  }
+  .animate-marquee:hover {
+	animation-play-state: paused;
+  }
