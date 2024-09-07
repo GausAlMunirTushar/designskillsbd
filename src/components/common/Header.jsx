@@ -19,7 +19,7 @@ const Header = () => {
   ];
 
   const buttonLinks = [
-    { text: "LOGIN/SIGNUP", icon: <span className="ml-1">→</span>, bgColor: "bg-yellow-400", hoverColor: "hover:bg-yellow-500" },
+    { text: "LOGIN/SIGNUP", bgColor: "bg-green-500", hoverColor: "hover:bg-green-400" },
   ];
 
   const toggleDarkMode = () => {
@@ -103,7 +103,7 @@ const Header = () => {
             {buttonLinks.map(({ text, icon, bgColor = "bg-gray-100", hoverColor = "hover:bg-gray-200" }) => (
               <button
                 key={text}
-                className={`${bgColor} text-sm py-2 px-4 rounded-md flex items-center ${hoverColor}`}
+                className={`${bgColor} text-sm font-bold py-2 px-4 rounded-md flex items-center ${hoverColor}`}
               >
                 {text} {icon}
               </button>

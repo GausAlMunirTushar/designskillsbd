@@ -19,8 +19,8 @@ import {
 
 const Footer = () => {
 	return (
-		<footer className="bg-green-50 text-gray-800 py-10 dark:bg-gray-900 dark:text-white">
-			<div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+		<footer className="bg-green-50 text-gray-800 dark:bg-gray-900 dark:text-white">
+			<div className="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				{/* Branding Section */}
 				<div>
 					<h2 className="text-2xl font-bold flex items-center">
@@ -137,13 +137,7 @@ const Footer = () => {
 			</div>
 
 			{/* Payment Methods and SSL Icons */}
-			<div className="mt-8 border-t border-gray-300 pt-6 flex flex-wrap justify-center items-center space-x-4">
-				{/* <SiVisa className="h-8 w-8" />
-        <SiMastercard className="h-8 w-8" />
-        <SiAmericanexpress className="h-8 w-8" />
-        <SiDiscover className="h-8 w-8" />
-        {/* Add other icons as needed */}
-				{/* <SiSsl className="h-8 w-8" /> */}
+			<div className="mt-8 border-t py-3 border-gray-200 dark:border-gray-600 flex flex-wrap pl-4 sm:pl-0 sm:justify-center items-center">
 			<h3>Design and Developed by <a href="https://gausalmunirtushar.xyz" target="_blank" rel="noopener noreferrer" className=" font-semibold">Gaus Al Munir Tushar</a></h3>
 			</div>
 		</footer>
