@@ -5,9 +5,9 @@ const Hero = () => {
 			<div className="container mx-auto  rounded-lg py-8 px-4 bg-green-50 dark:bg-gray-900 border border-green-100 dark:border-gray-700 shadow flex flex-col md:flex-row items-center justify-center">
 				<div className="flex flex-col md:w-1/2">
 					<h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-						Bangladesh Learns{" "}
-						<span className="text-red-600">Live</span>{" "}
-						<span className="text-red-600">•</span>
+						 Learn Creativity in {" "}
+						<span className="text-red-600 animate-pulse">Live</span>{" "}
+						<span className="text-red-600 animate-ping">•</span>
 					</h1>
 					<p className="text-gray-700 dark:text-white text-lg mb-6">
 						Upgrade your future through Skill Development
