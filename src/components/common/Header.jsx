@@ -15,9 +15,10 @@ const Header = () => {
 
 	const navLinks = [
 		// { href: "#", text: "SPECIAL OFFER", icon: <FaStar className="text-green-500 mr-1" /> },
-		{ href: "#", text: "Courses" },
-		{ href: "#", text: "Services" },
-		{ href: "#", text: "Blog" },
+		{ href: "/courses", text: "Courses" },
+		{ href: "/services", text: "Services" },
+		{ href: "/about", text: "About Us" },
+		{ href: "/blog", text: "Blog" },
 	];
 
 	const buttonLinks = [
