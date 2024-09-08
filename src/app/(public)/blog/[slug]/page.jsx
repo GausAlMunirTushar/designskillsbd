@@ -1,15 +1,14 @@
-// app/blog/page.jsx
-import Link from "next/link";
-import BlogCard from "@/components/blog/BlogCard";
-import React from "react";
+// app/blog/[slug]/page.jsx
+import Image from "next/image";
+import { notFound } from "next/navigation";
 
-// Ensure blogPosts have valid slugs
+// Sample data with slugs
 const blogPosts = [
 	{
-		slug: "comprehensive-guide-to-javascript-closures",
-		title: "A Comprehensive Guide to JavaScript Closures",
+		slug: "understanding-react-hooks",
+		title: "Understanding React Hooks",
 		content:
-			"JavaScript closures are a fundamental concept that allows functions to access variables from an outer scope even after the outer function has finished executing. This powerful feature is key for creating private variables, managing state, and more.\n\n### What is a Closure?\n\nA closure is a function that retains access to its lexical scope, even when the function is executed outside that scope. This means a closure can remember and access variables from the context in which it was created.\n\n### How Closures Work\n\nClosures are created whenever a function is defined inside another function. The inner function maintains access to the outer function's variables.\n\n**Example:**\n```javascript\nfunction outer() {\n  let count = 0;\n  function inner() {\n    count++;\n    console.log(count);\n  }\n  return inner;\n}\n\nconst counter = outer();\ncounter(); // 1\ncounter(); // 2\n```\n\n### Common Use Cases\n\n- **Data Privacy:** Closures help in creating private variables.\n- **Function Factories:** Create functions with customized behavior.\n- **Maintaining State:** Track and maintain state across multiple function calls.\n\n### Best Practices\n\n- **Be Mindful of Memory Leaks:** Closures can cause memory leaks if not used carefully.\n- **Avoid Unintended Side Effects:** Ensure closures do not unintentionally alter variables in the outer scope.\n\n### Conclusion\n\nClosures are a powerful feature of JavaScript that enable functional programming patterns and can significantly improve code modularity and reusability. Understanding closures will enhance your ability to write efficient and clean JavaScript code.",
+			"React Hooks are functions that let you use state and other React features...",
 		author: "John Doe",
 		date: "September 8, 2024",
 		image: "/banner.jpg",
@@ -47,22 +46,51 @@ const blogPosts = [
 	},
 ];
 
-const BlogPage = () => {
+// Function to find a blog post by slug
+async function getPost(slug) {
+	return blogPosts.find((post) => post.slug === slug);
+}
+
+export default async function BlogViewPage({ params }) {
+	const { slug } = params; // Correctly extract slug
+	const post = await getPost(slug); // Use the slug to find the correct post
+
+	// Handle case when post is not found
+	if (!post) {
+		return notFound(); // Show a 404 page
+	}
+
 	return (
-		<div className="container mx-auto px-4 py-10">
-			<h1 className="text-4xl font-bold text-center mb-8">
-				Our Amazing Blogs
-			</h1>
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-				{blogPosts.map((post, index) => (
-					// Ensure the Link uses a valid slug
-					<Link key={index} href={`/blog/${post.slug}`}>
-						<BlogCard post={post} />
-					</Link>
-				))}
+		<div className="container mx-auto py-8 px-4">
+			<div className="max-w-2xl mx-auto">
+				<Image
+					src={post.image}
+					alt={post.title}
+					className="w-full h-80 object-cover rounded-md mb-6"
+					width={600}
+					height={240}
+				/>
+				<h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+
+				<div className="flex items-center mb-6">
+					<Image
+						src={post.authorImage}
+						alt={post.author}
+						className="w-10 h-10 rounded-full mr-4"
+						width={40}
+						height={40}
+					/>
+					<div>
+						<p className="text-sm font-semibold">{post.author}</p>
+						<p className="text-xs text-gray-500">{post.date}</p>
+					</div>
+				</div>
+
+				<div className="prose prose-lg">
+					<p>{post.content}</p>
+					{/* Additional content here */}
+				</div>
 			</div>
 		</div>
 	);
-};
-
-export default BlogPage;
+}
