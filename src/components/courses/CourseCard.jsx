@@ -11,13 +11,13 @@ const CourseCard = ({ course }) => {
 				height={160}
 			/>
 			<div className="flex gap-4 py-3 px-4 items-center text-sm text-gray-600">
-				<p className="bg-gray-200 dark:bg-gray-700 dark:text-white px-2 py-1 rounded ">
+				<p className="bg-gray-200 dark:bg-gray-700 dark:text-white px-1.5 py-1 rounded ">
 					{course.batch}
 				</p>
-				<p className="bg-gray-200 dark:bg-gray-700 dark:text-white px-2 py-1 rounded">
+				<p className="bg-gray-200 dark:bg-gray-700 dark:text-white px-1.5 py-1 rounded">
 					{course.seatsLeft} Seats Left
 				</p>
-				<p className="bg-gray-200 dark:bg-gray-700 dark:text-white px-2 py-1 rounded">
+				<p className="bg-gray-200 dark:bg-gray-700 dark:text-white px-1.5 py-1 rounded">
 					{course.daysLeft} Days Left
 				</p>
 			</div>

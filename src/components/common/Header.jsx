@@ -47,12 +47,14 @@ const Header = () => {
 			<div className="container mx-auto flex items-center justify-between gap-4">
 				{/* Logo Section */}
 				<div className="flex items-center space-x-2 px-2">
-					<Image
-						src="/logo.png"
-						alt="Design Skills BD Logo"
-						width={120}
-						height={40}
-					/>
+					<Link href="/">
+						<Image
+							src="/logo.png"
+							alt="Design Skills BD Logo"
+							width={120}
+							height={40}
+						/>
+					</Link>
 				</div>
 
 				{/* Mobile Menu Button */}
