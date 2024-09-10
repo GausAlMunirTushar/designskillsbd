@@ -1,9 +1,6 @@
 import { Hind_Siliguri } from "next/font/google";
-import { ThemeProvider } from 'next-themes';
-import "./globals.css";
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer"
-import Notice from "@/components/common/Notice";
+import { ThemeProvider } from "next-themes";
+import "../globals.css";
 
 const siliguri = Hind_Siliguri({
 	subsets: ["latin"],
@@ -15,15 +12,14 @@ export const metadata = {
 	description: "",
 };
 
-export default function RootLayout({ children }) {
+export default function DashboardLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className={siliguri.className}>
 				<ThemeProvider attribute="class">
-					<Notice/>
-					<Header />
-					{children}
-					<Footer/>
+					<div>Dashboard Header</div>
+						{children}
+					<div>Dashboard Footer</div>
 				</ThemeProvider>
 			</body>
 		</html>
